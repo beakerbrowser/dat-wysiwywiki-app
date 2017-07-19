@@ -1,0 +1,28 @@
+main {
+  padding: 1rem;
+}
+
+main > :first-child {
+  margin-top: 0;
+}
+
+nav {
+  position: fixed;
+  right: 3px;
+  top: 3px;
+  z-index: 2000;
+}
+
+.readmode,
+.editmode {
+  display: none;
+}
+.readmode.active,
+.editmode.active {
+  display: block;
+}
+
+.note-editor.note-frame {
+  border: 0;
+  border-radius: 0;
+}

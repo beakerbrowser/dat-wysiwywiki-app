@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en" style="overflow: hidden;"><head>
+    <title>WYSIWYWiki</title>
+
+    <!-- include libraries -->
+    <link href="/assets/bootstrap.css" rel="stylesheet">
+    <script src="/assets/jquery.js"></script> 
+    <script src="/assets/bootstrap.js"></script> 
+
+    <!-- wysiwyg libraries -->
+    <link href="/assets/summernote.css" rel="stylesheet">
+    <script src="/assets/summernote.js"></script>
+
+    <!-- include app assets -->
+    <link href="/assets/main.css" rel="stylesheet">
+    <script src="/assets/main.js"></script>
+  </head>
+  <body style="overflow: hidden;">
+    <main style="display: block;">
+      <!-- content area -->
+      <h1>What You See Is What You Wiki [v1]</h1>
+      <p>
+        A user-editable website created by Paul Frazee.
+        Uses the Dat Web API to read and write the site.</p>
+      <h2>Instructions</h2>
+      <ul>
+        <li>Press <b>Fork</b> to create your own copy.</li>
+        <li>Press <b>Edit</b> to make changes.</li>
+        <li>Press <b>Publish</b> to make the changes permanent.</li>
+    </main>
+    <nav>
+      <div class="readmode active">
+        <a class="btn btn-success action-publish hidden">Publish</a>
+        <a class="btn btn-primary action-edit hidden">Edit</a>
+        <a class="btn btn-default action-fork">Fork</a>
+      </div>
+      <div class="editmode">
+        <a class="btn btn-primary action-save">Save</a>
+        <a class="btn btn-default action-cancel">Cancel</a>
+      </div>
+    </nav>
+  
+
+</body></html>
