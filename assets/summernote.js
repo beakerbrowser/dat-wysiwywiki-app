@@ -6399,7 +6399,7 @@
         var youtubeId = ytMatch[1];
         $video = $('<iframe>')
             .attr('frameborder', 0)
-            .attr('src', '//www.youtube.com/embed/' + youtubeId)
+            .attr('src', 'https://www.youtube.com/embed/' + youtubeId)
             .attr('width', '640').attr('height', '360');
       } else if (igMatch && igMatch[0].length) {
         $video = $('<iframe>')
@@ -6417,19 +6417,19 @@
       } else if (vimMatch && vimMatch[3].length) {
         $video = $('<iframe webkitallowfullscreen mozallowfullscreen allowfullscreen>')
             .attr('frameborder', 0)
-            .attr('src', '//player.vimeo.com/video/' + vimMatch[3])
+            .attr('src', 'https://player.vimeo.com/video/' + vimMatch[3])
             .attr('width', '640').attr('height', '360');
       } else if (dmMatch && dmMatch[2].length) {
         $video = $('<iframe>')
             .attr('frameborder', 0)
-            .attr('src', '//www.dailymotion.com/embed/video/' + dmMatch[2])
+            .attr('src', 'https://www.dailymotion.com/embed/video/' + dmMatch[2])
             .attr('width', '640').attr('height', '360');
       } else if (youkuMatch && youkuMatch[1].length) {
         $video = $('<iframe webkitallowfullscreen mozallowfullscreen allowfullscreen>')
             .attr('frameborder', 0)
             .attr('height', '498')
             .attr('width', '510')
-            .attr('src', '//player.youku.com/embed/' + youkuMatch[1]);
+            .attr('src', 'https://player.youku.com/embed/' + youkuMatch[1]);
       } else if (mp4Match || oggMatch || webmMatch) {
         $video = $('<video controls>')
             .attr('src', url)
