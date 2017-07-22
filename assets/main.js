@@ -33,8 +33,37 @@ function onEdit () {
   // update UI
   isEditing = true
   updateNav()
-  $('main').summernote()
+  $('main').summernote({
+    toolbar: [
+      ['style', ['style']],
+      ['styles', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+      ['font', ['fontname', 'fontsize', 'color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'hr', 'picture', 'video']],
+      ['view', ['codeview', 'help']]
+    ],
+    callbacks: {onImageUpload}
+  })
   $('main').summernote('fullscreen.toggle')
+}
+
+function onImageUpload (files) {
+  $.each(files, (idx, file) => {
+    var reader = new FileReader()
+    reader.onload = async () => {
+      // make sure /images exists
+      try { await self.mkdir('/images') }
+      catch (e) {}
+      // write
+      const path = `/images/${file.name}`
+      await self.writeFile(path, reader.result, 'binary')
+      // insert
+      const url = self.url + path
+      $('main').summernote('insertImage', url, file.name)
+    }
+    reader.readAsArrayBuffer(file)
+  })
 }
 
 function onSave () {
