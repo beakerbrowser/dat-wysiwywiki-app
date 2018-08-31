@@ -23,7 +23,7 @@ $(document).ready(function () {
 function onFork (e) {
   e.preventDefault()
   DatArchive.resolveName(location.toString()).then(url => {
-    return DatArchive.fork(url)
+    return DatArchive.fork(url, {prompt: true})
   }).then(fork => {
     window.location = fork.url
   })
@@ -70,6 +70,7 @@ function onSave () {
   // update UI
   isEditing = false
   updateNav()
+  $('main').summernote('fullscreen.toggle')
   $('main').summernote('destroy')
 
   // persist changes
@@ -84,6 +85,7 @@ function onCancel () {
   // update UI
   isEditing = false
   updateNav()
+  $('main').summernote('fullscreen.toggle')
   $('main').summernote('destroy')  
 }
 
